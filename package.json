@@ -1,0 +1,39 @@
+{
+  "name": "roole-browser",
+  "version": "0.1.0",
+  "description": "Browser version of the Roole language",
+  "main": "lib/roole-browser.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "http-server -p 8423 & mocha-phantomjs http://127.0.0.1:8423/test/test.html; kill $!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/curvedmark/roole-browser.git"
+  },
+  "keywords": [
+    "roole",
+    "browser"
+  ],
+  "author": "Glen Huang <curvedmark@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/curvedmark/roole/issues"
+  },
+  "dependencies": {
+    "roole": "*",
+    "floader": "1.x"
+  },
+  "devDependencies": {
+    "mocha": "1.x",
+    "browserify": "2.x",
+    "chai": "1.x",
+    "mocha-phantomjs": "3.x",
+    "sinon": "1.x",
+    "uglify-js": "2.x",
+    "http-server": "~0.5.5"
+  }
+}
