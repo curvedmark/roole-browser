@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+    "start": "http-server -p 8424",
     "test": "http-server -p 8423 & mocha-phantomjs http://127.0.0.1:8423/test/test.html; kill $!"
   },
   "repository": {
@@ -23,10 +24,6 @@
   "bugs": {
     "url": "https://github.com/curvedmark/roole/issues"
   },
-  "dependencies": {
-    "roole": "*",
-    "floader": "1.x"
-  },
   "devDependencies": {
     "mocha": "1.x",
     "browserify": "2.x",
@@ -34,6 +31,10 @@
     "mocha-phantomjs": "3.x",
     "sinon": "1.x",
     "uglify-js": "2.x",
-    "http-server": "~0.5.5"
+    "http-server": "0.5.x",
+    "unindent": "1.x",
+    "floader": "1.x",
+    "path-br": "1.x",
+    "roole": "*"
   }
 }

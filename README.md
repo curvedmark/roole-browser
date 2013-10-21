@@ -4,9 +4,7 @@ Browser version of the Roole language
 
 ## Installation
 
-Insert the `roole.js` file into the HTML.
-
-You can get the `roole.js` file by:
+Insert the `roole.min.js` file into the HTML. You can get it by:
 
 - directly download it from this repo,
 
@@ -14,12 +12,12 @@ You can get the `roole.js` file by:
 
 		npm install roole-browser
 
-	and use `node_modules/roole-browser/roole.js`
+	and use `node_modules/roole-browser/roole.min.js`
 
 ## Example
 
 ```html
-<script src="path/to/roole.js"></script>
+<script src="path/to/roole.min.js"></script>
 
 <script>
 	roole.compile(code, options, callback);

@@ -1,12 +1,18 @@
 VER = $(shell node -e "console.log(require('./node_modules/roole/package.json').version)")
 
-roole.js: | node_modules
-	@echo '// Roole $(VER) | roole.org | MIT license' > $@
-	@node_modules/.bin/browserify -r roole -r floader -r path-extras >>$@
-	@echo '!function() {' >> $@
-	@cat lib/bootstrap.js >> $@
-	@echo '}();' >> $@
-	@node_modules/.bin/uglifyjs $@ -vcm --comments '/^ Roole/' -o $@
+roole.min.js: roole.js
+	@echo '// Roole v$(VER) | roole.org | MIT license' > $@
+	@node_modules/.bin/uglifyjs $< -vcm >> $@
+
+roole.js: lib/bootstrap.js | node_modules
+	@echo '/*' > $@
+	@echo ' * Roole v$(VER) - A language that compiles to CSS' >> $@
+	@echo ' * http://roole.org' >> $@
+	@echo ' *' >> $@
+	@echo ' * Copyright 2013 Glen Huang' >> $@
+	@echo ' * Released under the MIT license' >> $@
+	@echo ' */' >> $@
+	@node_modules/.bin/browserify -s roole lib/bootstrap.js >>$@
 
 node_modules:
 	npm install
